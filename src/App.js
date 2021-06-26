@@ -1,25 +1,26 @@
 import { Route, Switch } from 'react-router-dom';
 
-import Map from './pages/Map';
+import MapPage from './pages/MapPage';
 import Destination from './pages/Destination';
 import Profile from './pages/Profile';
-import MainNavigation from './components/layout/MainNavigation';
+import MainLayout from './components/layout/MainLayout';
 
 function App() {
   return (
     <div>
-      <MainNavigation />
-      <Switch>
-        <Route path='/' exact>
-          <Map />
-        </Route>
-        <Route path='/destination'>
-          <Destination />
-        </Route>
-        <Route path='/profile'>
-          <Profile />
-        </Route>  
-      </Switch>
+      <MainLayout>
+        <Switch>
+          <Route path='/' exact>
+            <MapPage />
+          </Route>
+          <Route path='/destination'>
+            <Destination />
+          </Route>
+          <Route path='/profile'>
+            <Profile />
+          </Route>
+        </Switch>
+      </MainLayout>
     </div>
   );
 }
